@@ -40,65 +40,96 @@ import step2 from './assets/Images/step2.jpg'
 import line1 from './assets/Images/line1.svg'
 import line3 from './assets/Images/line3.svg'
 import slider1 from './assets/Images/slider1.png'
-import slider11 from './assets/Images/slider11.png'
 import slider2 from './assets/Images/slider2.png'
-import slider22 from './assets/Images/slider22.png'
 import slider3 from './assets/Images/slider3.png'
-import slider33 from './assets/Images/slider33.png'
 import slider4 from './assets/Images/slider4.png'
-import slider44 from './assets/Images/slider44.png'
-import slider5 from './assets/Images/slider5.png'
-import slider55 from './assets/Images/slider55.png'
-import slider6 from './assets/Images/slider6.png'
-import slider66 from './assets/Images/slider66.png'
-
-
-
-
-
-
-
-
-
-
-
-
+import { motion } from "framer-motion";
 export default function App() {
   const [openIndex, setOpenIndex] = useState(null);
-
-
   return (
-    <div className="min-h-screen text-slate-900 font-['Plus_Jakarta_Sans'] relative ">
+    <div className="min-h-screen text-slate-900 font-['Plus_Jakarta_Sans'] relative  ">
       <div className="bg-black px-20">
-        <div className="relative overflow-hidden opacity-100 bg-gradient-to-b from-[#D2F0E3] to-white">
-          {/* Background Image */}
+        <div className="relative z-0 overflow-hidden  bg-gradient-to-b from-[#D2F0E3] to-white">
+
+          <div className=" absolute top-0 left-0  w-full min-h-screen -translate-x-[25vw] -translate-y-[25vh] opacity-100 bg-cover  bg-center opacity-100  pointer-events-none  z-10"
+            style={{ backgroundImage: `url(${cloud1})` }} />
 
 
-          <div className=" absolute top-0 left-0  w-full min-h-screen -translate-x-[25vw] -translate-y-[25vh] opacity-100 bg-cover  bg-center opacity-100  pointer-events-none  z-0"
-            style={{ backgroundImage: `url(${cloud1})` }}
-          />
+          <div className=" absolute top-0 left-0 w-full min-h-screen translate-x-[35vw] -translate-y-[25vh] opacity-100  bg-cover bg-center opacity-100 pointer-events-none z-10"
+            style={{ backgroundImage: `url(${cloud2})` }} />
 
-          {/* ===== Background Layer 2 (Rotated) ===== */}
-          <div className=" absolute top-0 left-0 w-full min-h-screen translate-x-[35vw] -translate-y-[25vh] opacity-100  bg-cover bg-center opacity-100 pointer-events-none z-0"
-            style={{ backgroundImage: `url(${cloud2})` }}
-          />
 
-          {/* Background animation strip */}
-          <div className=" overflow-hidden ">
+          <div className="absolute min-h-screen inset-0 z-0 pointer-events-none overflow-hidden ">
 
-            <img src={slider1}
-              style={{ top: "240px", left: "13px" }}
-              className="w-1440 h-237 absolute  opacity-30 animate-slideSlow" />
-            <img src={slider33}
-              style={{ top: "500px", left: "13px" }}
-              className="w-1440 h-100 absolute  opacity-30" />
-            <img src={slider4}
-              style={{ top: "640px", left: "13px" }}
-              className="w-1440 h-100 absolute  opacity-30" />
-            <img src={slider22}
-              style={{ top: "790px", left: "13px" }}
-              className="w-1440 h-226 absolute  opacity-30" />
+            <div className="absolute top-[240px] left-[13px] w-full overflow-hidden">
+              <motion.div className="flex w-max" animate={{ x: ["0%", "-50%"] }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                <img src={slider1}
+                  className="w-[1440px] h-[237px] opacity-30 flex-shrink-0"
+                  alt=""
+                />
+                <img src={slider1}
+                  className="w-[1440px] h-[237px] opacity-30 flex-shrink-0"
+                  alt=""
+                />
+              </motion.div>
+            </div>
+          </div>
 
+
+          <div className="relative">
+
+            <div className="absolute top-[500px] left-[13px] w-full overflow-hidden">
+              <motion.div
+                className="flex w-max"
+                animate={{ x: ["-50%", "0%"] }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                <img src={slider2}
+                  className="w-[2070px] h-[100px] opacity-30 flex-shrink-0"
+                  alt=""
+                />
+                <img src={slider2}
+                  className="w-[2070px] h-[100px] opacity-30 flex-shrink-0"
+                  alt=""
+                />
+              </motion.div>
+            </div>
+          </div>
+
+
+
+          <div className="relative">
+            {/* POSITION CONTROLLER */}
+            <div className="absolute top-[630px] left-[13px] w-full overflow-hidden">
+              <motion.div
+                className="flex w-max"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                <img src={slider3}
+                  className="w-[2070px] h-[100px] opacity-30 flex-shrink-0"
+                  alt=""
+                />
+                <img src={slider3}
+                  className="w-[2070px] h-[100px] opacity-30 flex-shrink-0"
+                  alt=""
+                />
+              </motion.div>
+            </div>
           </div>
 
 
@@ -106,34 +137,48 @@ export default function App() {
 
 
 
+          <div className="absolute top-[750px] left-[13px] w-full overflow-hidden">
+            <motion.div
+              className="flex w-max "
+              animate={{ x: ["-50%", "0%"] }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <img src={slider4}
+                className="w-[2070px] h-[237px] opacity-30 flex-shrink-0"
+                alt=""
+              />
+              <img src={slider4}
+                className="w-[2070px] h-[237px] opacity-30 flex-shrink-0"
+                alt=""
+              />
+            </motion.div>
+          </div>
 
 
-
-
-
-
-
-
-
-
-
-
-          {/* Header */}<div className="relative z-10">
-            <header className="sticky top-6 ">
-              <div className="mx-auto max-w-7xl px-10 grid grid-cols-[auto_1fr_auto] items-center h-16 ">
-
-
-
+          <div className="relative z-20">
+            <header className="sticky top-6">
+              <div
+                className="
+        mx-auto max-w-7xl 
+        px-4 sm:px-6 lg:px-10
+        grid grid-cols-2 lg:grid-cols-[auto_1fr_auto]
+        items-center h-16
+      "
+              >
                 {/* Logo */}
-                <div className="flex items-center  ">
-                  <img src={logo} className="w-68 h-68" />
-                  <h1 className="text-xl font-semibold leading-none text-[#212529] w-24 h-7.5">
+                <div className="flex items-center gap-2">
+                  <img src={logo} className="w-12 h-12 sm:w-16 sm:h-16" />
+                  <h1 className="text-lg sm:text-xl font-semibold leading-none text-[#212529]">
                     Clubwise
                   </h1>
                 </div>
 
-                {/* Center Navigation */}
-                <div className="flex justify-center">
+                {/* Nav (hidden on mobile) */}
+                <div className="hidden lg:flex justify-center">
                   <nav className="flex items-center gap-16 px-8 py-5 rounded-full border border-[#22B573]">
                     <a className="text-[#22B573] font-medium hover:text-emerald-600 transition">
                       Home
@@ -147,88 +192,98 @@ export default function App() {
                   </nav>
                 </div>
 
-                {/* Right Buttons */}
-                <div className="flex items-center gap-4 ">
-                  <button className="px-8  rounded-lg w-25 h-12 bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition">
+                {/* Buttons */}
+                <div className="flex justify-end lg:justify-start items-center gap-2 sm:gap-4">
+                  <button
+                    className="px-4 sm:px-8 h-10 sm:h-12 rounded-lg bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition"
+                  >
                     Login
                   </button>
-                  <button className="px-8 py-2  w-46 h-12 rounded-lg border border-[#22B573] text-[#22B573] font-medium hover:bg-emerald-50 transition">
-                    Create an account
+
+                  <button
+                    className="hidden sm:block px-4 sm:px-8 h-10 sm:h-12 rounded-lg border border-[#22B573] text-[#22B573] font-medium hover:bg-emerald-50 transition"
+                  >Create an account
                   </button>
                 </div>
-
               </div>
             </header>
 
-            {/* Hero Section */}
-            <main className="flex flex-col items-center text-center w-full mx-auto mt-40 gap-4 ">
 
-              <h1 className=" ml-4 text-5xl  font-semibold font-poppins leading-relaxed tracking-wide">
+
+            {/* Hero Section */}
+            <main className="flex flex-col items-center text-center w-full mx-auto 
+  mt-24 sm:mt-32 lg:mt-40 gap-4 px-4">
+
+              <h1 className="relative z-10 ml-0 sm:ml-4 
+    text-3xl sm:text-4xl lg:text-5xl 
+    font-semibold font-poppins leading-relaxed tracking-wide">
                 Build, Manage, and Grow Your Club <br />
                 Community —{" "}
                 <span className="relative inline-block">
-
-                  {/* Text */}
                   <span className="relative z-10">All in One Place</span>
-
-                  {/* Green underline with spacing */}
                   <span className="absolute inset-x-0 bottom-0 h-2 bg-[#22B573] rounded-full z-0"></span>
-
                 </span>
               </h1>
 
-
-              <p className=" font-poppins font-normal text-slate-600 text-center max-w-2xl mx-auto  leading-relaxed">
-
-
+              <p className="relative z-10 font-poppins font-normal text-slate-600 
+    text-sm sm:text-base 
+    text-center max-w-xl sm:max-w-2xl mx-auto leading-relaxed">
                 Clubwise helps organizations run clubs, nodes, manage members, host discussions, post opportunities, and keep communities active without chaos.
               </p>
 
-
-              <div className="mt-6 flex gap-4">
-
-                <button className="px-8 py-3 rounded-lg bg-[#22B573] text-white font-semibold hover:opacity-90 transition">
+              <div className="mt-6 flex flex-col sm:flex-row gap-4">
+                <button className="relative z-10 px-8 py-3 rounded-lg bg-[#22B573] text-white font-semibold hover:opacity-90 transition">
                   Create an account
                 </button>
-                <button className="px-8 py-3 rounded-lg border border-emerald-500 text-emerald-500 font-semibold hover:bg-emerald-50 transition">
+                <button className="relative z-10 px-8 py-3 rounded-lg border border-emerald-500 text-emerald-500 font-semibold hover:bg-emerald-50 transition">
                   Learn more
                 </button>
               </div>
-              <img src={node2}
-                className="w-14 h-14 absolute rounded-full opacity-100 "
-                style={{ top: "414px", left: "335px" }} />
 
-              <img src={line1}
-                className="w-61.58 h-250.8 absolute rounded-full opacity-100 "
-                style={{ top: "435px", left: "255px" }} />
+              <img
+                src={node2}
+                className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
+                style={{ top: "414px", left: "335px" }}
+              />
 
-              <img src={line3}
-                className="w-61.58 h-247.04 absolute rounded-full opacity-100 "
-                style={{ top: "438.5px", left: "1076.69px" }} />
-              <img src={club2}
-                className="w-14 h-14 absolute rounded-full opacity-100 "
-                style={{ top: "419px", left: "1063px" }} />
+              <img
+                src={line1}
+                className="hidden lg:block absolute opacity-100"
+                style={{ top: "435px", left: "255px" }}
+              />
+
+              <img
+                src={line3}
+                className="hidden lg:block absolute opacity-100"
+                style={{ top: "438.5px", left: "1076.69px" }}
+              />
+
+              <img
+                src={club2}
+                className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
+                style={{ top: "419px", left: "1063px" }}
+              />
 
 
 
 
-              <div className="mx-auto mt-20 max-w-6xl h-full rounded-2xl shadow-[-8px_-8px_12px_#22B57350,8px_-8px_12px_#22B57350,-8px_0_12px_#22B57350]">
+              <div className="z-10 mx-auto mt-12 sm:mt-16 lg:mt-20 
+  max-w-full sm:max-w-5xl lg:max-w-6xl 
+  h-full rounded-2xl px-4 sm:px-0
+  shadow-[-8px_-8px_12px_#22B57350,8px_-8px_12px_#22B57350,-8px_0_12px_#22B57350]">
 
                 <div className="relative rounded-2xl overflow-hidden">
 
-                  {/* Image */}
                   <img
                     src={Home}
                     alt="Dashboard"
-                    className=" object-cover object-top "
+                    className="w-full object-cover object-top"
                   />
 
-                  {/* Bottom fog ONLY */}
                   <div
-                    className="pointer-events-none absolute bottom-0 left-0 right-0 w-full h-24 bg-gradient-to-t from-white via-white/70 to-transparent">
+                    className="pointer-events-none absolute bottom-0 left-0 right-0 w-full h-16 sm:h-20 lg:h-24 
+      bg-gradient-to-t from-white via-white/70 to-transparent">
                   </div>
-
-
 
                 </div>
               </div>
@@ -237,89 +292,85 @@ export default function App() {
 
 
 
+              <section className="mt-4 pb-10 relative w-full h-full min-h-screen flex items-center justify-center overflow-hidden">
 
-
-
-
-
-
-
-              <section className=" pb-10 relative w-full h-full min-h-screen flex items-center justify-center overflow-hidden">
-
-                {/* Background */}
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${Frame2})` }}
                 />
 
+                <div className="relative z-10 
+    mt-24 sm:mt-32 lg:mt-40 
+    text-center 
+    max-w-full sm:max-w-3xl lg:max-w-5xl 
+    mx-auto px-4 lg:px-0">
 
-                <div className="relative z-10   mt-40 text-center max-w-5xl mx-auto">
-                  <p className="px-30 mr-20 font-poppins font-semibold text-4xl text-black leading-relaxed tracking-snug">
+                  <p className="
+      px-4 sm:px-10 lg:px-30
+      mr-0 sm:mr-10 lg:mr-20
+      font-poppins font-semibold
+      text-2xl sm:text-3xl lg:text-4xl
+      text-black leading-relaxed tracking-snug
+    ">
                     From workplace teams to global networks, we build spaces where ideas thrive.
                     Together, we’re shaping the future of community building.
                   </p>
 
-                  <div className="flex justify-center mt-40">
+                  <div className="flex justify-center mt-20 sm:mt-32 lg:mt-40">
                     <button className="bg-green-500 hover:bg-green-400 text-white w-32 h-12 font-medium rounded-md">
                       Learn More
                     </button>
                   </div>
                 </div>
+
                 <img src={metal}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "123px", left: "175px" }}
                 />
                 <img src={male1}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "67px", left: "497px" }}
                 />
                 <img src={male2}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "67px", left: "753px" }}
                 />
                 <img src={male3}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "105px", left: "1047px" }}
                 />
                 <img src={sky}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "32px", left: "1216px" }}
                 />
                 <img src={female}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "338px", left: "100px" }}
                 />
                 <img src={spin}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "420px", left: "336px" }}
                 />
                 <img src={steps}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "420px", left: "1160px" }}
                 />
                 <img src={step2}
-                  className="w-14 h-14 absolute rounded-full opacity-100"
+                  className="hidden lg:block w-14 h-14 absolute rounded-full opacity-100"
                   style={{ top: "264px", left: "1284px" }}
                 />
-
 
               </section>
 
 
+              <div className="  pb-30 relative  bg-white/70 opacity-100  min-h-screen w-full bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${image})` }}>
 
 
-
-
-              <div
-                className="  pb-30 relative  bg-white/70 opacity-100  min-h-screen w-full bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${image})` }}
-              >
-
-                {/* Features Button */}
                 <button className="bg-white text-black mt-12 font-medium font-poppins rounded-full py-2 px-6 shadow-md opacity-100 hover:bg-gray-100" >
                   Features
                 </button>
 
-                {/* Heading */}
+
                 <h1 className="font-poppins font-semibold text-[32px] text-center leading-relaxed mt-6">
                   <span className="block">
                     Everything Your Community Needs —
@@ -328,22 +379,16 @@ export default function App() {
                     Nothing It Doesn’t
                   </span>
                 </h1>
-
-
                 <p className="font-poppins font-normal text-base text-black/70 text-center leading-relaxed max-w-7xl">
                   <span className="block">Create and manage multiple clubs under one platform.Assign admins, manage members,</span>
                   <span className="block"> and control visibility.</span>
                 </p>
-
-
-
-
                 <section className="mx-auto mt-10 max-w-7xl flex-col md:flex-row flex items-center justify-between gap-12">
 
-                  {/* LEFT CONTENT */}
+
                   <div className=" flex max-w-7xl flex-col gap-1 px-10">
 
-                    {/* Title Group */}
+
                     <div className="flex flex-col gap-1">
                       <div className="flex items-center gap-1">
                         <img src={NodeLogo} alt="Nodes icon" className="h-6 w-6" />
@@ -352,18 +397,18 @@ export default function App() {
                         </h2>
                       </div>
 
-                      {/* Subtitle - Directly below title */}
+
                       <p className=" flex items-start w-full mt-1 font-poppins text-base italic text-black/90">
                         For internal company communities!
                       </p>
                     </div>
 
-                    {/* Description */}
+
                     <p className="font-poppins text-base  text-black">
                       Structure large communities into focused sub-groups.
                     </p>
 
-                    {/* Bullet points - Standard sizing */}
+
                     <ul className="flex flex-col gap-1">
                       <li className="flex items-start gap-1 font-poppins  text-black text-base ">
                         <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
@@ -395,7 +440,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* RIGHT IMAGE */}
+
                   <div className=" flex w-full md:w-1/2 md:justify-end ">
                     <div className="rounded-2xl bg-emerald-50">
                       <img
@@ -420,7 +465,7 @@ export default function App() {
 
                   <div className="mt-10  flex max-w-7xl flex-col gap-1 px-20">
 
-                    {/* Title Group */}
+
                     <div className="flex flex-col gap-1">
                       <div className="flex items-center  gap-1">
                         <img src={ClubLogo} alt="Nodes icon" className="h-6 w-6" />
@@ -437,7 +482,7 @@ export default function App() {
                       Create, manage, and run clubs without operational mess.
                     </p>
 
-                    {/* Bullet points - Standard sizing */}
+
                     <ul className="flex flex-col gap-1">
                       <li className="flex items-start gap-2 font-poppins  text-black text-base/">
                         <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
@@ -466,20 +511,14 @@ export default function App() {
                         <img src={sidebar} />
                       </a>
                     </div>
-
-
-
                   </div>
                 </section>
-
-
-
                 <section className="mx-auto mt-10 w-full max-w-7xl flex-col md:flex-row flex items-center justify-between gap-10">
 
-                  {/* LEFT CONTENT */}
+
                   <div className=" flex max-w-xl flex-col gap-1 px-10">
 
-                    {/* Title Group */}
+
                     <div className="mt-8 flex flex-col gap-1">
                       <div className="flex items-center gap-1">
                         <img src={ClubSiteLogo} alt="Nodes icon" className="h-8 w-8" />
@@ -490,16 +529,7 @@ export default function App() {
                       <p className="text-start font-poppins text-base text-black tracking-tight">
                         Showcase your club’s identity, work, and achievements publicly.
                       </p>
-
-                      {/* Subtitle - Directly below title */}
-
-
                     </div>
-
-
-
-
-                    {/* Bullet points - Standard sizing */}
                     <ul className="flex flex-col gap-1">
                       <li className="flex items-start gap-1 font-poppins  text-black text-base ">
                         <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
@@ -519,7 +549,6 @@ export default function App() {
                       </li>
                     </ul>
 
-                    {/* Learn more - Matching the first photo's underline style */}
                     <div className="mt-2 flex items-start">
                       <a
                         href="#"
@@ -531,7 +560,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* RIGHT IMAGE */}
+
                   <div className=" flex w-full md:w-1/2 md:justify-end">
 
                     <img
@@ -540,8 +569,6 @@ export default function App() {
                       className="h-auto w-full rounded-lg "
                     />
                   </div>
-
-
                 </section>
 
 
@@ -555,7 +582,7 @@ export default function App() {
 
                   <div className="mt-10   flex max-w-7xl  flex-col gap-1 px-20">
 
-                    {/* Title Group */}
+
                     <div className="flex flex-col gap-1">
                       <div className="flex items-center  gap-1">
                         <img src={TreasurLogo} alt="Nodes icon" className="h-6 w-6" />
@@ -570,7 +597,7 @@ export default function App() {
 
 
 
-                    {/* Bullet points - Standard sizing */}
+
                     <ul className="flex flex-col gap-1">
                       <li className="flex items-start gap-2 font-poppins  text-black text-base/">
                         <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
@@ -599,21 +626,9 @@ export default function App() {
                         <img src={sidebar} />
                       </a>
                     </div>
-
-
-
-
-
                   </div>
                 </section>
               </div>
-
-
-
-
-
-
-
 
               <h1 className=" mt-20 mx-auto max-w-7xl font-poppins text-5xl font-semibold leading-none text-center text-black">
                 Why Clubs Choose  <span className="text-emerald-700">Clubwise</span>
@@ -621,19 +636,10 @@ export default function App() {
               <p className=" mx-auto max-w-3xl font-poppins text-base font-normal leading-relaxed tracking-wide gap-4 text-center text-black/70 opacity-100">
                 Most platforms are generic.{" "}Clubwise is purpose-built for clubs and communities that need structure, engagement, and visibility in one system.
               </p>
-
-
-
-
-
-
-
-
-
-              <section className="p-20 mt-10 relative w-full h-full  flex flex-col lg:flex-row gap-4 ">
+              <section className="px-20 mt-20 relative w-full h-full  flex flex-col lg:flex-row gap-4 ">
 
                 {/* ================= LEFT IMAGE ================= */}
-                <div className="pl-10  w-full lg:w-1/2  sm:grid-cols-2 gap-4   overflow-hidden gap-2">
+                <div className="pl-20  w-full lg:w-1/2  sm:grid-cols-2 gap-4   overflow-hidden gap-2">
                   <div className="rounded-2xl bg-emerald-50 h-full w-full object-cover">
                     <img
                       src={CheckMail}
@@ -646,9 +652,9 @@ export default function App() {
                 {/* ================= RIGHT CARDS ================= */}
                 <div>
                   {/* ROW 1 */}
-                  <div className=" mt-8  flex flex-wrap gap-2 ">
+                  <div className=" mt-2  flex flex-wrap  ">
                     <div className="max-w-md lg:w-1/3  ">
-                      <div className="rounded-2xl border border-[#E6E6E6] bg-gradient-to-b from-white to-[#D4FFEC]  p-5 min-h-56 flex flex-col gap-3">
+                      <div className="rounded-2xl border border-[#E6E6E6] bg-gradient-to-b from-white to-[#D4FFEC]  p-5 min-h-48 flex flex-col gap-3">
                         <img src={growthlogo} className="h-9 w-9 hover:bg-gray-900 rounded-full" />
                         <div className="w-50 border-t border-dashed border-gray-400 opacity-100 "></div>
 
@@ -659,16 +665,12 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="max-w-sm h-full lg:w-2/3 gap-2">
-                      <div className="rounded-2xl border border-[#E6E6E6] bg-[#F9FFF4] p-5 min-h-56 flex items-start gap-4">
+                    <div className="max-w-sm h-full lg:w-2/3 ">
+                      <div className="rounded-2xl border border-[#E6E6E6] bg-[#F9FFF4] p-5 min-h-56 flex items-start gap-3">
 
                         {/* Logo */}
                         <img src={ccm} className="h-9 w-9 hover:bg-gray-900 rounded-full" />
-
-                        {/* Vertical dashed line */}
                         <div className="border-l border-dashed border-gray-400 h-40 "></div>
-
-                        {/* Content */}
                         <div className="flex flex-col gap-2">
                           <p className="mt-4 text-sm uppercase text-black/60 text-start">Centralized Club Management</p>
                           <span className="mt-4  text-md font-semibold text-black text-start leading-snug tracking-normal font-poppins">
@@ -681,17 +683,13 @@ export default function App() {
                   </div>
 
                   {/* ROW 2 */}
-                  <div className="flex flex-wrap gap-2">
-                    <div className="max-w-sm lg:w-2/3 gap-2">
-                      <div className="rounded-2xl border border-[#E6E6E6] bg-[#F9FFF4] p-5 min-h-56 flex items-start gap-4">
+                  <div className="flex flex-wrap ">
+                    <div className="max-w-sm lg:w-2/3 ">
+                      <div className="rounded-2xl border border-[#E6E6E6] bg-[#F9FFF4] p-5 min-h-56 flex items-start gap-3">
 
                         {/* Logo */}
                         <img src={eng} className="h-9 w-9 hover:bg-gray-900 rounded-full" />
-
-                        {/* Optional vertical dashed line (same as above card) */}
                         <div className="border-l border-dashed border-gray-400 h-40"></div>
-
-                        {/* Content */}
                         <div className=" mt-4 flex flex-col gap-2">
                           <p className="text-sm uppercase text-black/60 text-start">
                             Engagement That Actually Works
@@ -703,13 +701,7 @@ export default function App() {
 
                       </div>
                     </div>
-
-
-
-
-
-
-                    <div className="max-w-md lg:w-1/3 gap-2">
+                    <div className="max-w-md lg:w-1/3">
                       <div className="rounded-2xl border border-[#E6E6E6] bg-gradient-to-b from-white to-[#D4FFEC] p-5 min-h-56 flex flex-col gap-3">
                         <img src={cdc} className="h-9 w-9 hover:bg-gray-900 rounded-full" />
                         <div className="w-50 border-t border-dashed border-gray-400 opacity-100"></div>
@@ -721,9 +713,6 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-
-
-
               </section>
               <div className="mt-10 w-full h-full bg-[#DEFFE1] py-20 bg-cover">
                 <div className="mx-auto w-full max-w-6xl">
@@ -741,8 +730,6 @@ export default function App() {
 
                     {/* Card 2 */}
                     <div className="flex flex-col items-center justify-center rounded-2xl bg-white p-8 text-center  hover:bg-gray-200 shadow-[0_4px_20px_rgba(16,185,129,0.25)]">
-
-                      {/* Icon frame */}
                       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#22B573]">
                         <img src={Node1} />
                       </div>
@@ -769,7 +756,6 @@ export default function App() {
                       <p className="font-poppins text-2xl font-semibold text-black">60+</p>
                       <p className="mt-1 font-poppins text-sm text-black/70">Modules</p>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -777,7 +763,7 @@ export default function App() {
               <div className="min-h-screen bg-white py-24">
                 <div className="mx-auto w-11/12 max-w-4xl text-center">
 
-                  {/* Heading */}
+
                   <h2 className="text-3xl font-semibold text-black">
                     Frequently Asked Questions
                   </h2>
@@ -786,8 +772,6 @@ export default function App() {
                     Clear answers for both Clubs and Nodes—designed for transparency and confident decision-making.
                   </p>
 
-
-                  {/* Toggle Buttons */}
                   <div className="mt-8 flex justify-center gap-4">
                     <button className="rounded-full bg-[#22B573] px-6 py-2 text-sm font-medium text-white  hover:bg-emerald-600">
                       Club
@@ -796,9 +780,6 @@ export default function App() {
                       Node
                     </button>
                   </div>
-
-
-
                   <div className="w-[65rem] h-18 opacity-100 flex gap-2.5 rounded-lg px-6 py-4  hover:text-gray-500">
                     {/* content */}
                   </div>
@@ -830,11 +811,6 @@ export default function App() {
                       </p>
                     )}
                   </div>
-
-
-
-
-
                   <div className="mt-2 mx-auto mx-w-full rounded-xl bg-gray-100 px-5 py-5  hover:text-gray-500">
                     <div className="flex items-center justify-between">
                       <p className="text-sm font-poppins font-medium">
@@ -936,11 +912,6 @@ export default function App() {
                     )}
                   </div>
                 </div></div>
-
-
-
-
-
               <div className="w-full bg-linear-to-r from-emerald-100 via-emerald-50 to-sky-100  ">
                 <div className="bg-gradient-to-br pt-10 from-[#D2F0E2] to-[#DEE6F7]">
 
@@ -967,7 +938,7 @@ export default function App() {
                         </button>
                       </div>
 
-                      {/* Quick Links */}
+
                       <div>
                         <h4 className="text-sm font-semibold text-black">Quick links</h4>
                         <ul className=" mt-3 space-y-2 text-start text-sm text-gray-700  ">
@@ -978,7 +949,7 @@ export default function App() {
                         </ul>
                       </div>
 
-                      {/* Contact Us */}
+
                       <div>
                         <h4 className="text-start text-sm font-semibold">Contact us</h4>
                         <div className="mt-3 space-y-2 text-sm text-gray-700">
@@ -995,10 +966,10 @@ export default function App() {
 
                     </div>
 
-                    {/* Divider */}
+
                     <div className="mt-16 border-t border-black/10"></div>
 
-                    {/* Bottom */}
+
                     <p className="mt-6 text-center text-xs text-gray-600">
                       © 2025 ClubWise. All rights reserved.
                     </p>
